@@ -47,7 +47,25 @@ public class LegacyCameraConnectionFragment extends Fragment {
   private int layout;
 
   public LegacyCameraConnectionFragment() {
+    Bundle bundle = this.getArguments();
+    if (bundle != null) {
+      this.imageListener = bundle.getInt("me", defaultValue);
+      this.layout = bundle.getInt("lid", defaultValue);
+    }
+    
+    Bundle bundle = new Bundle();
+        bundle.putInt("me", this);
+        bundle.putInt("lid", getLayoutId());
+        fragment.setArguments(bundle);
   }
+  /*
+  public LegacyCameraConnectionFragment(
+      final Camera.PreviewCallback imageListener,
+      final int layout) {
+    this.imageListener = imageListener;
+    this.layout = layout;
+  }
+  */
 
   /**
    * Conversion from screen rotation to JPEG orientation.
