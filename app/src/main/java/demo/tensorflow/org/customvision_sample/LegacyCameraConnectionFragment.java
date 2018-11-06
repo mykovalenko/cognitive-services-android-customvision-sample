@@ -46,14 +46,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
    */
   private int layout;
 
-public LegacyCameraConnectionFragment() {
-  }
-
-  public LegacyCameraConnectionFragment(
-      final Camera.PreviewCallback imageListener,
-      final int layout) {
-    this.imageListener = imageListener;
-    this.layout = layout;
+  public LegacyCameraConnectionFragment() {
   }
 
   /**
