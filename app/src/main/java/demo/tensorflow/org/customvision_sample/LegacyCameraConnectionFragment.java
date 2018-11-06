@@ -47,12 +47,11 @@ public class LegacyCameraConnectionFragment extends Fragment {
   private int layout;
 
   public LegacyCameraConnectionFragment() {
-    //Bundle bundle = this.getArguments();
-    //if (bundle != null) {
-    //  this.imageListener = bundle.getObject("me", defaultValue);
-    //  this.layout = bundle.getInt("lid", defaultValue);
-    //}
-   
+    Bundle bundle = this.getArguments();
+    if (bundle != null) {
+      this.imageListener = bundle.getSerializable("me");
+      this.layout = bundle.getInt("lid");
+    }
   }
   /*
   public LegacyCameraConnectionFragment(
