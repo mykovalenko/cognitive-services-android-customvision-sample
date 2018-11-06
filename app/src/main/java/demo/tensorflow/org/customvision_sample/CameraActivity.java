@@ -328,12 +328,7 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
       camera2Fragment.setCamera(cameraId);
       fragment = camera2Fragment;
     } else {
-      //fragment = new LegacyCameraConnectionFragment(this, getLayoutId());
-        fragment = new LegacyCameraConnectionFragment();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("me", this);
-        bundle.putInt("lid", getLayoutId());
-        fragment.setArguments(bundle);
+      fragment = new LegacyCameraConnectionFragment(this, getLayoutId());
     }
 
     getFragmentManager()
